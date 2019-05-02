@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="noindex">
+
+    <title>itigo - Login</title>
+
+    <link href="./styles/css/itigo.css" rel="stylesheet" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap4-duallistbox/4.0.1/bootstrap-duallistbox.min.css" rel="stylesheet" type="text/css">
+
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- #FAVICONS -->
+		<link rel="shortcut icon" href="./styles/img/favicon/favicon.ico" type="image/x-icon">
+		
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.6.3/papaparse.min.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap4-duallistbox/4.0.1/jquery.bootstrap-duallistbox.min.js" type="text/javascript"></script>
+		<script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
+		<script src="./ItigoWDC.js" type="text/javascript"></script>
+		<script src="./index.js" type="text/javascript"></script>
+
+
+        
+</head>
+
+<body>
+<br><br>
+<div class="text-center">
+    <img src="./styles/img/favicon/logo.png" style="width: inherit; max-width:100%; height:auto;" alt="itigo">
+</div>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3" id="loginPanel">
+            <div class="login-panel card">
+                <div class="card-header">
+                    <h3 class="card-title">Please Sign in</h3>
+                </div>
+                <div class="card-body">
+                    <form accept-charset="UTF-8">
+                        <fieldset>
+                            <div class="form-group">
+                                <input placeholder="E-mail" class="form-control" type="text" autofocus="autofocus" id='username' name="username">
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Senha" class="form-control" name="password" type="password" id="password" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="environment">Select environment:</label>
+                                <select class="form-control" id="environment">
+                                    <option>QA</option>
+                                    <option>Prod</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-lg btn-success btn-block" type="button" id="loginButton">Login</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" id="selectPanel" style="display:none;">
+            <select class="form-control" id="businessObjectSelection"></select>
+            <br>
+            <select multiple class="form-control" id="columnsSelection"></select>
+            <br>
+            <button class="btn btn-lg btn-success btn-block" type="button" id="submitButton">Get Data</button>
+            <br>
+        </div>
+    </div>
+</div>
+</body>
+</html>
