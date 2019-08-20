@@ -2,7 +2,7 @@
 
 var host = {
     QA: 'https://test-api.itigocloud.com',
-    Prod: 'https://api.itigocloud.com'
+    Production: 'https://api.itigocloud.com'
 };
 
 function ItigoWDC () {
