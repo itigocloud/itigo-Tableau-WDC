@@ -6,9 +6,6 @@ tableau.registerConnector(wdc);
 (function () {
 	$(document).ready(function () {
 
-		$.getJSON('./response.json', function(resp){
-		});
-
 		// Get the input field
 		var inputUsername = document.getElementById("username");
 		// Execute a function when the user releases a key on the keyboard
@@ -76,10 +73,18 @@ tableau.registerConnector(wdc);
                 tableau.connectionData = JSON.stringify(connectionData);
                 var table;
                 var column;
-                for (table in tables) {
+								var tablesOrdered = {};
+								Object.keys(tables).sort().forEach(function(key) {
+									tablesOrdered[key] = tables[key];
+								});
+                for (table in tablesOrdered) {
                     businessObjectSelection.append(new Option(table, table));
-                    for (column in tables[table]) {
-                        columnsSelection.append(new Option(table + '.' + tables[table][column].columnAlias, table + '.' + column));
+										var columnsOrdered = {};
+										Object.keys(tablesOrdered[table]).sort().forEach(function(key) {
+											columnsOrdered[key] = tablesOrdered[table][key];
+										});
+                    for (column in columnsOrdered) {
+                        columnsSelection.append(new Option(table + '.' + tablesOrdered[table][column].columnAlias, table + '.' + column));
                     }
                 }
                 var dualListboxOptions = {
